@@ -1,0 +1,21 @@
+.header{
+
+    height: 70px;
+}
+
+.element{
+    color:black;
+    font-size: 21px;
+    
+
+}
+
+#home{
+    font-size: 23px;
+}
+
+#mainNavbar{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
