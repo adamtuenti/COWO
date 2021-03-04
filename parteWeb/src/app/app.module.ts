@@ -12,6 +12,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
+import { CostaComponent } from './costa/costa.component';
+import { SierraComponent } from './sierra/sierra.component';
+import { AmazoniaComponent } from './amazonia/amazonia.component';
 
 
 @NgModule({
@@ -19,7 +22,10 @@ import { environment } from '../environments/environment';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    CostaComponent,
+    SierraComponent,
+    AmazoniaComponent
   ],
   imports: [
     BrowserModule,
