@@ -1,1 +1,31 @@
 <p>home works!</p>
+ 
+<body ng-app="eventosApp">
+    <script type="text/javascript" src="angular.min.js"></script>
+    <div ng-controller="eventosController">
+        <div id="contenedor_principal">
+        <!--Primera Imagen-->
+        <div class="contenedor_imagen_texto">
+        <div class="imagen"><img (click)="eventR1()" src="assets/img/EcuadorR1.jpg">
+        </div>
+
+
+        </div>
+
+        <!--Segunda Imagen-->
+        <div class="contenedor_imagen_texto">
+        <div class="imagen"><img (click)="eventR2()" src="assets/img/EcuadorR2.jpg"></div>
+
+        </div>
+
+        <!--tercera Imagen-->
+        <div class="contenedor_imagen_texto">
+        <div class="imagen"><img (click)="eventR3()" src="assets/img/EcuadorR3.jpg"></div>
+        </div>
+        </div>
+
+        <strong>{{msg}}</strong>
+    </div>
+
+
+</body>
