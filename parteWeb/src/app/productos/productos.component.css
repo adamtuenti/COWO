@@ -16,3 +16,72 @@
     background-color: deepskyblue;
 
 }
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+background-size: cover;
+}
+#fila1 {
+display: inline-flex;
+margin-bottom: 0.5em;
+margin-left: 2em;
+margin-right: 2em;
+}
+#campañareciente {
+display: block;
+font-size: 1.5em;
+margin-block-start: 0.83em;
+margin-inline-start: 0px;
+margin-inline-end: 0px;
+margin-left: 1em;
+}
+
+img {
+vertical-align: middle;
+border-style: none;
+width: 100%;
+}
+
+.mat-card>:last-child:not(.mat-card-footer), .mat-card-content>:last-child:not(.mat-card-footer) {
+margin-top: 1.5em;
+}
+
+.button{
+  background-color: #4CAF50;
+  border-radius: 5%;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  margin: 0 auto;
+}
+
+.tarjeta{
+  border: 2px solid black;
+  border-radius: 25px;
+  height: 250px;
+  width: 250px;
+  background-color: deepskyblue;
+}
+
+#divAbajo{
+  border: 1px solid black;
+  border-radius: 15px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.content{
+  align-items: center;
+  justify-content: center;
+}
