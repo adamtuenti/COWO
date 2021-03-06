@@ -1,8 +1,10 @@
 #contenedor_principal{
-    width:1024px;
+    width: 600px;
+    height: 500px;
+    position: absolute;
     height:auto;
-    position:relative;
-    margin:auto;
+    top: 10%;
+    left: 50%;
     }
     .contenedor_imagen_texto{
     width:200px;
