@@ -1,0 +1,18 @@
+.contenedor {
+    /* IMPORTANTE */
+    text-align: center;
+  }
+  
+.img {
+    background-color: cornflowerblue;
+    padding: 10px;
+    margin: 10px;
+    
+    /* IMPORTANTE */
+    display: inline-block;
+  }
+
+.fondo{
+    background-color: deepskyblue;
+
+}
