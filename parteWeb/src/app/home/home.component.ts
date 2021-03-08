@@ -32,28 +32,28 @@ export class HomeComponent implements OnInit {
 
 
   costaOver(): void{
-    this.renderer.setAttribute(this.childComp.nativeElement,"stroke","#F7F16D");
-    this.renderer.setAttribute(this.childComp.nativeElement,"fill","#74CB1C");
+    this.renderer.setAttribute(this.childComp.nativeElement,"stroke","#f3e816");
+    this.renderer.setAttribute(this.childComp.nativeElement,"fill","#f3e816");
   }
   costaOut(): void{
     this.renderer.setAttribute(this.childComp.nativeElement,"stroke","#fff");
-    this.renderer.setAttribute(this.childComp.nativeElement,"fill","#F7F16D");
+    this.renderer.setAttribute(this.childComp.nativeElement,"fill","#faf59e");
   }
   sierraOver(): void{
-    this.renderer.setAttribute(this.childComp2.nativeElement,"stroke","#7fff7f");
-    this.renderer.setAttribute(this.childComp2.nativeElement,"fill","#74CB1C");
+    this.renderer.setAttribute(this.childComp2.nativeElement,"stroke","#60fe0b");
+    this.renderer.setAttribute(this.childComp2.nativeElement,"fill","#60fe0b");
   }
   sierraOut(): void{
     this.renderer.setAttribute(this.childComp2.nativeElement,"stroke","#fff");
-    this.renderer.setAttribute(this.childComp2.nativeElement,"fill","#A0FE6D");
+    this.renderer.setAttribute(this.childComp2.nativeElement,"fill","#bdfe9a");
   }
   amazoniaOver(): void{
-    this.renderer.setAttribute(this.childComp3.nativeElement,"stroke","#7fff7f");
-    this.renderer.setAttribute(this.childComp3.nativeElement,"fill","#74CB1C");
+    this.renderer.setAttribute(this.childComp3.nativeElement,"stroke","#c4a045");
+    this.renderer.setAttribute(this.childComp3.nativeElement,"fill","#c4a045");
   }
   amazoniaOut(): void{
     this.renderer.setAttribute(this.childComp3.nativeElement,"stroke","#fff");
-    this.renderer.setAttribute(this.childComp3.nativeElement,"fill","#9A7C31");
+    this.renderer.setAttribute(this.childComp3.nativeElement,"fill","#e7d7b1");
   }
 
 }
