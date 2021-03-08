@@ -1,0 +1,39 @@
+<div id='tituloDiv'>
+    <h4 id="titulo">Inicio de sesión</h4>
+  </div>
+  
+  <div id="datos" class="card-header">
+  
+        <h4 id="tituloBienvenido">Bienvenido a Ayudar-App</h4>
+        
+        <form #form="ngForm" (ngSubmit)="loginUser(form)">
+        <div>
+          <div class=" row">
+            <input class="form-control" type="text" placeholder="Correo" name="email" type='email' ngModel required>
+            
+          </div>
+    
+          <div class="form-group row" style="margin-bottom:15%">
+            <input class="form-control" placeholder="Contraseña" name="password" type='password' ngModel required>
+            
+          </div>
+  
+          <button type="submit" class="loginBtn loginCorreo btn-success">
+            Iniciar sesión
+          </button>
+
+          <button class="btn btn-success" (click)="goToReset('hwong@espol.edu.ec')">
+            Restablecer contraseña
+          </button> 
+          <button class="btn btn-success" (click)="goToReset('hwong@espol.edu.ec')">
+            Crear cuenta
+          </button>       
+        </div>
+        
+        </form>
+  
+  </div>
+  
+    
+  
+  
