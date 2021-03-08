@@ -7,9 +7,12 @@ import {Router} from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  @ViewChild('costa') childComp: ElementRef;
-  @ViewChild('sierra', { static: false }) childComp2: ElementRef;
-  @ViewChild('amazonia', { static: false }) childComp3: ElementRef;
+  @ViewChild('costa') costa: ElementRef;
+  @ViewChild('sierra') sierra: ElementRef;
+  @ViewChild('amazonia') amazonia: ElementRef;
+  @ViewChild('costaTexto') costaTexto: ElementRef;
+  @ViewChild('sierraTexto') sierraTexto: ElementRef;
+  @ViewChild('amazoniaTexto') amazoniaTexto: ElementRef;
   
 
   constructor( private router: Router, private renderer: Renderer2 ) { }
@@ -32,28 +35,34 @@ export class HomeComponent implements OnInit {
 
 
   costaOver(): void{
-    this.renderer.setAttribute(this.childComp.nativeElement,"stroke","#f3e816");
-    this.renderer.setAttribute(this.childComp.nativeElement,"fill","#f3e816");
+    this.renderer.setAttribute(this.costa.nativeElement,"stroke","#f3e816");
+    this.renderer.setAttribute(this.costa.nativeElement,"fill","#f3e816");
+    this.renderer.setAttribute(this.costaTexto.nativeElement,"fill","#fff");
   }
   costaOut(): void{
-    this.renderer.setAttribute(this.childComp.nativeElement,"stroke","#fff");
-    this.renderer.setAttribute(this.childComp.nativeElement,"fill","#faf59e");
+    this.renderer.setAttribute(this.costa.nativeElement,"stroke","#fff");
+    this.renderer.setAttribute(this.costa.nativeElement,"fill","#faf59e");
+    this.renderer.setAttribute(this.costaTexto.nativeElement,"fill","#525252");
   }
   sierraOver(): void{
-    this.renderer.setAttribute(this.childComp2.nativeElement,"stroke","#60fe0b");
-    this.renderer.setAttribute(this.childComp2.nativeElement,"fill","#60fe0b");
+    this.renderer.setAttribute(this.sierra.nativeElement,"stroke","#60fe0b");
+    this.renderer.setAttribute(this.sierra.nativeElement,"fill","#60fe0b");
+    this.renderer.setAttribute(this.sierraTexto.nativeElement,"fill","#fff");
   }
   sierraOut(): void{
-    this.renderer.setAttribute(this.childComp2.nativeElement,"stroke","#fff");
-    this.renderer.setAttribute(this.childComp2.nativeElement,"fill","#bdfe9a");
+    this.renderer.setAttribute(this.sierra.nativeElement,"stroke","#fff");
+    this.renderer.setAttribute(this.sierra.nativeElement,"fill","#bdfe9a");
+    this.renderer.setAttribute(this.sierraTexto.nativeElement,"fill","#525252");
   }
   amazoniaOver(): void{
-    this.renderer.setAttribute(this.childComp3.nativeElement,"stroke","#c4a045");
-    this.renderer.setAttribute(this.childComp3.nativeElement,"fill","#c4a045");
+    this.renderer.setAttribute(this.amazonia.nativeElement,"stroke","#c4a045");
+    this.renderer.setAttribute(this.amazonia.nativeElement,"fill","#c4a045");
+    this.renderer.setAttribute(this.amazoniaTexto.nativeElement,"fill","#fff");
   }
   amazoniaOut(): void{
-    this.renderer.setAttribute(this.childComp3.nativeElement,"stroke","#fff");
-    this.renderer.setAttribute(this.childComp3.nativeElement,"fill","#e7d7b1");
+    this.renderer.setAttribute(this.amazonia.nativeElement,"stroke","#fff");
+    this.renderer.setAttribute(this.amazonia.nativeElement,"fill","#e7d7b1");
+    this.renderer.setAttribute(this.amazoniaTexto.nativeElement,"fill","#525252");
   }
 
 }

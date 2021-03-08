@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductosComponent implements OnInit {
 
   public categorias = [];
-  public regionSeleccionada: String; 
+  public regionSeleccionada: string; 
 
   constructor(private activatedroute:ActivatedRoute,private categoriasServices: CategoriasProductosService) { 
     
