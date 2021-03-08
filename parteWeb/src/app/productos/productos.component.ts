@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from "@angular/fire/firestore";
 import {CategoriasProductosService} from "../../services/categorias-productos.service";
 import { MatTableDataSource } from '@angular/material/table';
+import { ActivatedRoute } from '@angular/router'; 
 
 @Component({
   selector: 'app-productos',
@@ -11,11 +12,20 @@ import { MatTableDataSource } from '@angular/material/table';
 export class ProductosComponent implements OnInit {
 
   public categorias = [];
+  public regionSeleccionada: String; 
 
-  constructor(private categoriasServices: CategoriasProductosService) { }
+  constructor(private activatedroute:ActivatedRoute,private categoriasServices: CategoriasProductosService) { 
+    
+
+  }
 
   ngOnInit(): void {
-    this.getCategorias();
+    /*this.activatedroute.paramMap.subscribe( param=>{
+      this.regionSeleccionada = param.get("region");
+      console.log(this.regionSeleccionada);
+    })*/
+    this.regionSeleccionada = this.activatedroute.snapshot.paramMap.get("region");
+    console.log(this.regionSeleccionada);
   }
 
   getCategorias(): void {
