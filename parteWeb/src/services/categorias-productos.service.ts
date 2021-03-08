@@ -10,7 +10,9 @@ export class CategoriasProductosService {
 
   constructor(private firestore: AngularFirestore,) { }
 
-  getCategoriasProductos(){
-    return this.firestore.collection("Categorias").snapshotChanges();
+  getCategoriasProductos(categoria:string){
+    return this.firestore.collection("Categorias", ref => ref.where("Region",'==',categoria)).snapshotChanges();
   }
+
+
 }

@@ -13,6 +13,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { ProductosComponent } from './productos/productos.component';
+import { ProvinciasComponent } from './provincias/provincias.component';
+import { LocalesComponent } from './locales/locales.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { ProductosComponent } from './productos/productos.component';
     LoginComponent,
     HomeComponent,
     HeaderComponent,
-    ProductosComponent
+    ProductosComponent,
+    ProvinciasComponent,
+    LocalesComponent
   ],
   imports: [
     BrowserModule,

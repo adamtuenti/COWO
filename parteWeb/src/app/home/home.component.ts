@@ -17,15 +17,15 @@ export class HomeComponent implements OnInit {
   }
 
   goCosta(): void{
-    this.router.navigate(['/', 'productos',{region:"costa"}]);
+    this.router.navigate(['/', 'productos',{region:"Costa"}]);
   }
 
   goSierra(): void{
-    this.router.navigate(['/', 'productos',{region:"sierra"}]);
+    this.router.navigate(['/', 'productos',{region:"Sierra"}]);
   }
 
   goAmazonia(): void{
-    this.router.navigate(['/', 'productos',{region:"amazonia"}]);
+    this.router.navigate(['/', 'productos',{region:"Amazonia"}]);
   }
 
 

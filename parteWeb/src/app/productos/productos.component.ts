@@ -25,12 +25,13 @@ export class ProductosComponent implements OnInit {
       console.log(this.regionSeleccionada);
     })*/
     this.regionSeleccionada = this.activatedroute.snapshot.paramMap.get("region");
-    console.log(this.regionSeleccionada);
+    this.getCategorias();
   }
 
   getCategorias(): void {
-    this.categoriasServices.getCategoriasProductos().subscribe((categoriaSnapshot) => {
+    this.categoriasServices.getCategoriasProductos(this.regionSeleccionada).subscribe((categoriaSnapshot) => {
       this.categorias = [];
+      console.log('hola')
       categoriaSnapshot.forEach((categoria: any) => {
           this.categorias.push({
               id: categoria.payload.doc.id,
