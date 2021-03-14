@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from "@angular/fire/firestore";
 import {CategoriasProductosService} from "../../services/categorias-productos.service";
 import { MatTableDataSource } from '@angular/material/table';
-import { ActivatedRoute } from '@angular/router'; 
+import { ActivatedRoute, Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-productos',
@@ -14,7 +14,7 @@ export class ProductosComponent implements OnInit {
   public categorias = [];
   public regionSeleccionada: string; 
 
-  constructor(private activatedroute:ActivatedRoute,private categoriasServices: CategoriasProductosService) { 
+  constructor(private router: Router,private activatedroute:ActivatedRoute,private categoriasServices: CategoriasProductosService) { 
     
 
   }
@@ -43,8 +43,10 @@ export class ProductosComponent implements OnInit {
           });
       });console.log(this.categorias);
       
-  })
-  
+  }) 
 
+  }
+  goLocales(categoriaSeleccionada: string): void{
+    this.router.navigate(['/', 'locales',{region:this.regionSeleccionada,categoria:categoriaSeleccionada}]);
   }
 }

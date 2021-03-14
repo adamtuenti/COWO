@@ -1,1 +1,21 @@
-<p>locales works!</p>
+
+<div align="center">
+    <h1 style="margin-top:85px;margin-bottom: 25px;">Locales de {{categoriaSeleccionada}}</h1>
+</div>
+
+<body>
+    
+    <mat-grid-list cols="3"  rowHeight="250px" style="margin-bottom: 1em;">
+        <mat-grid-tile *ngFor="let local of locales">
+            <mat-card style="margin-right: 2em;" class="example-card tarjeta">
+                <div class="content" align='center'>
+                    <p style="font-size: 25px;font-weight: bold;">{{local.nombre}}</p>
+                    <img src='{{local.imagen}}' width="300" height="150">
+
+                </div>
+                    
+                
+            </mat-card>
+        </mat-grid-tile>
+    
+    </mat-grid-list>

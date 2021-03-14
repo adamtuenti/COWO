@@ -7,13 +7,12 @@
     
     <mat-grid-list cols="3"  rowHeight="250px" style="margin-bottom: 1em;">
         <mat-grid-tile *ngFor="let categoria of categorias">
-            <mat-card style="margin-right: 2em;" class="example-card tarjeta">
+            <mat-card on-click = 'goLocales(categoria.nombre)'  style="margin-right: 2em;" class="example-card tarjeta">
                 <div class="content" align='center'>
                     <p style="font-size: 25px;font-weight: bold;">{{categoria.nombre}}</p>
                     <img src='{{categoria.imagen}}' width="300" height="150">
 
-                </div>
-                    
+                </div>                  
                 
             </mat-card>
         </mat-grid-tile>
