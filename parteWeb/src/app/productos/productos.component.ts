@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from "@angular/fire/firestore";
-import {CategoriasProductosService} from "../../services/categorias-productos.service";
-import { MatTableDataSource } from '@angular/material/table';
-import { ActivatedRoute, Router } from '@angular/router'; 
+import { ActivatedRoute, Router } from '@angular/router';
+import { ProductosService } from 'src/services/productos.service';
 
 @Component({
   selector: 'app-productos',
@@ -11,10 +9,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ProductosComponent implements OnInit {
 
-  public categorias = [];
-  public regionSeleccionada: string; 
+  public productos = [];
+  public localSeleccionado: string; 
 
-  constructor(private router: Router,private activatedroute:ActivatedRoute,private categoriasServices: CategoriasProductosService) { 
+  constructor(private router: Router,private activatedroute:ActivatedRoute,private productosServices: ProductosService) { 
     
 
   }
@@ -24,16 +22,16 @@ export class ProductosComponent implements OnInit {
       this.regionSeleccionada = param.get("region");
       console.log(this.regionSeleccionada);
     })*/
-    this.regionSeleccionada = this.activatedroute.snapshot.paramMap.get("region");
-    this.getCategorias();
+    this.localSeleccionado = this.activatedroute.snapshot.paramMap.get("local");
+    this.getProductos();
   }
 
-  getCategorias(): void {
-    this.categoriasServices.getCategoriasProductos(this.regionSeleccionada).subscribe((categoriaSnapshot) => {
-      this.categorias = [];
+  getProductos(): void {
+    this.productosServices.getProductos(this.localSeleccionado).subscribe((productosnapshot) => {
+      this.productos = [];
       console.log('hola')
-      categoriaSnapshot.forEach((categoria: any) => {
-          this.categorias.push({
+      productosnapshot.forEach((categoria: any) => {
+          this.productos.push({
               id: categoria.payload.doc.id,
               nombre: categoria.payload.doc.data().Nombre,
               region: categoria.payload.doc.data().Region,
@@ -41,12 +39,12 @@ export class ProductosComponent implements OnInit {
               
 
           });
-      });console.log(this.categorias);
+      });console.log(this.productos);
       
   }) 
 
   }
-  goLocales(categoriaSeleccionada: string): void{
-    this.router.navigate(['/', 'locales',{region:this.regionSeleccionada,categoria:categoriaSeleccionada}]);
-  }
+
+  
+
 }

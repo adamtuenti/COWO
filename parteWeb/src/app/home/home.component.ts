@@ -28,15 +28,15 @@ export class HomeComponent implements OnInit {
   }
 
   goCosta(): void{
-    this.router.navigate(['/', 'productos',{region:"Costa"}]);
+    this.router.navigate(['/', 'categorias',{region:"Costa"}]);
   }
 
   goSierra(): void{
-    this.router.navigate(['/', 'productos',{region:"Sierra"}]);
+    this.router.navigate(['/', 'categorias',{region:"Sierra"}]);
   }
 
   goAmazonia(): void{
-    this.router.navigate(['/', 'productos',{region:"Amazonia"}]);
+    this.router.navigate(['/', 'categorias',{region:"Amazonia"}]);
   }
 
 

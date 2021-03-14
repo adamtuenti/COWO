@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LocalesService } from 'src/services/locales.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class LocalesComponent implements OnInit {
   public regionSeleccionada: string; 
   public categoriaSeleccionada: string; 
 
-  constructor(private activatedroute:ActivatedRoute,private localesServices: LocalesService) { 
+  constructor(private router: Router, private activatedroute:ActivatedRoute,private localesServices: LocalesService) { 
     
 
   }
@@ -37,7 +37,7 @@ export class LocalesComponent implements OnInit {
               id: categoria.payload.doc.id,
               nombre: categoria.payload.doc.data().Nombre,
               region: categoria.payload.doc.data().Region,
-              imagen: categoria.payload.doc.data().img,
+              imagen: categoria.payload.doc.data().Imagen,
               
 
           });
@@ -46,6 +46,11 @@ export class LocalesComponent implements OnInit {
   })
   
 
+  }
+
+  goProductos(localSeleccionado: string): void{
+    console.log("hola");
+    this.router.navigate(['/', 'productos',{local:localSeleccionado}]);
   }
 
 }

@@ -12,9 +12,10 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
-import { ProductosComponent } from './productos/productos.component';
+import { CategoriasComponent } from './categorias/categorias.component';
 import { ProvinciasComponent } from './provincias/provincias.component';
 import { LocalesComponent } from './locales/locales.component';
+import { ProductosComponent } from './productos/productos.component';
 
 
 @NgModule({
@@ -23,9 +24,10 @@ import { LocalesComponent } from './locales/locales.component';
     LoginComponent,
     HomeComponent,
     HeaderComponent,
-    ProductosComponent,
+    CategoriasComponent,
     ProvinciasComponent,
-    LocalesComponent
+    LocalesComponent,
+    ProductosComponent
   ],
   imports: [
     BrowserModule,
