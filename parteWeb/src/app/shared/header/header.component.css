@@ -19,3 +19,11 @@
     align-items: center;
     justify-content: center;
 }
+
+.form-control:focus {
+    box-shadow: none;
+  }
+  
+.searchbar{
+    margin: 10% auto;
+}

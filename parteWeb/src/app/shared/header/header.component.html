@@ -1,3 +1,5 @@
+
+
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary header">
     <a class="navbar-brand" id="home" routerLink="/">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar"
@@ -24,6 +26,23 @@
   
       </ul>
       <ul class="navbar-nav ml-auto">
+
+        <li >
+
+          <div class="p-2 bg-light rounded rounded-pill shadow-sm mb-4 searchbar">
+            <div class="input-group">
+              <input type="search" placeholder="¿Qué estás buscando?" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+              <div class="input-group-append">
+                <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
+          </div>
+
+          
+        </li>
+
+      </ul>
+      <ul class="navbar-nav ml-auto">
         <!-- <li class="nav-item" //*ngIf="!isLogged"> -->
 <!--   
           <li class="nav-item dropdown" *ngIf="usuario">
@@ -47,5 +66,6 @@
           </li>
     
       </ul>
+      
     </div>
   </nav>
