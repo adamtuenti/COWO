@@ -1,26 +1,17 @@
-#contenedor_principal{
-    width: 600px;
-    height: 500px;
-    position: absolute;
-    height:auto;
-    top: 10%;
-    left: 50%;
-    }
-    .contenedor_imagen_texto{
-    width:200px;
-    height:auto;
-    position:relative;
-    display:inline-block;
-    vertical-align:top;
-    overflow:hidden;
-    }
-    .imagen, .texto{
-    width:100%;
-    height:auto;
-    position:relative;
-    display:inline;
-    }
-    .texto{
-    height:auto;
-    text-align:center
-    }
+#mapa{
+
+    align-items: center;
+    display: flex;
+    height: 80vh;
+    justify-content: flex-start;
+}
+
+
+#carrusel-publicidad{
+
+    align-items: center;
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+}
+

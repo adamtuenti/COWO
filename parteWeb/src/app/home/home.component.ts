@@ -1,11 +1,13 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-import {Router} from '@angular/router'; 
+import { Router } from '@angular/router';
+import { PublicidadService } from 'src/services/publicidad.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
   @ViewChild('costa') costa: ElementRef;
   @ViewChild('sierra') sierra: ElementRef;
@@ -16,15 +18,17 @@ export class HomeComponent implements OnInit {
   public sobreCosta:boolean;
   public sobreSierra:boolean;
   public sobreAmazonia:boolean;
+  public publicidades = [];
 
   
 
-  constructor( private router: Router, private renderer: Renderer2 ) { }
+  constructor( private router: Router, private renderer: Renderer2, private publicidadService: PublicidadService ) { }
   ngOnInit(): void {
 
     this.sobreCosta = false;
     this.sobreSierra = false;
     this.sobreAmazonia = false;
+    this.getlocales();
   }
 
   goCosta(): void{
@@ -77,6 +81,23 @@ export class HomeComponent implements OnInit {
     this.renderer.setAttribute(this.amazonia.nativeElement,"fill","#e7d7b1");
     this.renderer.setAttribute(this.amazoniaTexto.nativeElement,"fill","#e7d7b1");
     
+  }
+
+  getlocales(): void {
+    this.publicidadService.getPublicidad().subscribe((publicidadsnapshot) => {
+      this.publicidades = [];
+      console.log('hola')
+      publicidadsnapshot.forEach((categoria: any) => {
+          this.publicidades.push({
+              id: categoria.payload.doc.id,
+              link: categoria.payload.doc.data().Link,
+              imagen: categoria.payload.doc.data().Imagen,
+              
+
+          });
+      });console.log(this.publicidades);
+      
+  })
   }
 
 }

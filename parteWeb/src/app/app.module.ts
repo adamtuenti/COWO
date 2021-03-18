@@ -17,6 +17,8 @@ import { ProvinciasComponent } from './provincias/provincias.component';
 import { LocalesComponent } from './locales/locales.component';
 import { ProductosComponent } from './productos/productos.component';
 
+import {IvyCarouselModule} from 'angular-responsive-carousel';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { ProductosComponent } from './productos/productos.component';
     ProductosComponent
   ],
   imports: [
+    IvyCarouselModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,
