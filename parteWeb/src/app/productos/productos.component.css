@@ -71,7 +71,7 @@ margin-top: 1.5em;
   border-radius: 25px;
   height: 250px;
   width: 250px;
-  background-color: deepskyblue;
+  /* background-color: deepskyblue; */
 }
 
 #divAbajo{
@@ -85,3 +85,4 @@ margin-top: 1.5em;
   align-items: center;
   justify-content: center;
 }
+

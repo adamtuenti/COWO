@@ -10,7 +10,7 @@
     </div>
 
     <mat-list>
-        <mat-list-item *ngFor="let local of locales">
+        <mat-list-item *ngFor="let local of locales" on-click = 'goProductos(local.nombre)'>
             <img matListAvatar src="{{local.imagen}}" alt="..." style="height: 70px;width: 70px;">
             <p style="font-size: 25px;font-weight: bold;margin-left: 15px;">{{local.nombre}}</p>
         </mat-list-item>

@@ -35,7 +35,8 @@ export class ProductosComponent implements OnInit {
               id: categoria.payload.doc.id,
               nombre: categoria.payload.doc.data().Nombre,
               region: categoria.payload.doc.data().Region,
-              imagen: categoria.payload.doc.data().img,
+              imagen: categoria.payload.doc.data().Imagen,
+              precio: categoria.payload.doc.data().Precio,
               
 
           });

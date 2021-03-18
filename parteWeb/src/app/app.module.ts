@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
-import { MatGridListModule } from '@angular/material/grid-list';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -20,6 +19,7 @@ import {MatListModule} from '@angular/material/list';
 
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 
@@ -44,6 +44,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     AngularFireModule.initializeApp(environment),
     AngularFireAuthModule,
     HttpClientModule,
+    MatGridListModule,
     MatGridListModule,
     MatListModule
   ],
