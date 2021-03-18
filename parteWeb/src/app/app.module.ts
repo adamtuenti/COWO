@@ -19,6 +19,7 @@ import { ProductosComponent } from './productos/productos.component';
 import {MatListModule} from '@angular/material/list';
 
 import {IvyCarouselModule} from 'angular-responsive-carousel';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 
 
@@ -35,6 +36,7 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
   ],
   imports: [
     IvyCarouselModule,
+    MDBBootstrapModule.forRoot(),
     BrowserModule,
     FormsModule,
     AppRoutingModule,
