@@ -4,13 +4,18 @@
     <script type="text/javascript" src="angular.min.js"></script>
      
         <div class="row" ng-controller="eventosController" align="center" >
-            <div class="col-lg-5 col-xl-4" id = "carrusel-publicidad" >
-                <carousel >
+            <div *ngIf = "publicidades" class="col-lg-5 col-xl-4" id = "carrusel-publicidad" >
+                <carousel cellsToShow = "1" autoplay = 'true' dots = 'true' autoplayInterval = "3000" loop = 'true'>
 
                     <div  *ngFor="let publicidad of publicidades" class="carousel-cell">
-                        <img src='{{publicidad.imagen}}' width="300" height="150">
+                        <img src='{{publicidad.imagen}}'>
                     </div>
-                        
+                    <!--div class="carousel-cell">
+                        <img src='' width="300" height="150">
+                    </div> 
+                    <div class="carousel-cell">
+                        <img src='' width="300" height="150">
+                    </div-->                    
                     
                 </carousel>
 

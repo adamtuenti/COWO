@@ -22,13 +22,16 @@ export class HomeComponent implements OnInit {
 
   
 
-  constructor( private router: Router, private renderer: Renderer2, private publicidadService: PublicidadService ) { }
+  constructor( private router: Router, private renderer: Renderer2, private publicidadService: PublicidadService ) {
+    
+   }
   ngOnInit(): void {
-
+    
     this.sobreCosta = false;
     this.sobreSierra = false;
     this.sobreAmazonia = false;
     this.getlocales();
+    
   }
 
   goCosta(): void{
