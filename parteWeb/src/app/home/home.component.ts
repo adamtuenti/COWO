@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   @ViewChild('costaTexto') costaTexto: ElementRef;
   @ViewChild('sierraTexto') sierraTexto: ElementRef;
   @ViewChild('amazoniaTexto') amazoniaTexto: ElementRef;
+  @ViewChild('carruselImagen') carruselImagen: ElementRef;
   public sobreCosta:boolean;
   public sobreSierra:boolean;
   public sobreAmazonia:boolean;
@@ -31,6 +32,8 @@ export class HomeComponent implements OnInit {
     this.sobreSierra = false;
     this.sobreAmazonia = false;
     this.getlocales();
+    console.log(this.carruselImagen);
+    console.log(this.amazoniaTexto);
     
   }
 
@@ -46,7 +49,17 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/', 'categorias',{region:"Amazonia"}]);
   }
 
+  carruselOver(): void{
+    console.log("hola");
+    //this.renderer.removeClass(this.carruselImagen.nativeElement,"rgba-black-light");
+    this.renderer.addClass(this.carruselImagen.nativeElement,"zoom");
 
+  }
+  carruselOut(): void{
+    //this.renderer.addClass(this.carruselImagen.nativeElement,"rgba-black-light");
+    this.renderer.removeClass(this.carruselImagen.nativeElement,"zoom");
+
+  }
 
 
   costaOver(): void{

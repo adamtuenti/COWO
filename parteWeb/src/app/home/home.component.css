@@ -16,3 +16,7 @@
     justify-content: center;
 }
 
+.zoom {
+    transform: scale(1.05); 
+  }
+
