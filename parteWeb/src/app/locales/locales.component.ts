@@ -12,6 +12,7 @@ export class LocalesComponent implements OnInit {
   public locales = [];
   public regionSeleccionada: string; 
   public categoriaSeleccionada: string; 
+  localesVacios = false;
 
   constructor(private router: Router, private activatedroute:ActivatedRoute,private localesServices: LocalesService) { 
     
@@ -31,7 +32,6 @@ export class LocalesComponent implements OnInit {
   getlocales(): void {
     this.localesServices.getLocales(this.categoriaSeleccionada, this.regionSeleccionada).subscribe((localesnapshot) => {
       this.locales = [];
-      console.log('hola')
       localesnapshot.forEach((categoria: any) => {
           this.locales.push({
               id: categoria.payload.doc.id,
@@ -41,7 +41,14 @@ export class LocalesComponent implements OnInit {
               
 
           });
-      });console.log(this.locales);
+          
+      });
+      console.log(this.locales.length)
+      if(this.locales.length == 0){
+        this.localesVacios = true;
+      }else{
+        this.localesVacios = false;
+      }
       
   })
   

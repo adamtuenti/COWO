@@ -4,7 +4,7 @@
   }
   
 .img {
-    background-color: cornflowerblue;
+    /* background-color: cornflowerblue; */
     padding: 10px;
     margin: 10px;
     
@@ -13,17 +13,17 @@
   }
 
 .fondo{
-    background-color: deepskyblue;
+    /* background-color: deepskyblue; */
 
 }
 
 .example-card {
-  max-width: 400px;
+  max-width: 175px;
 }
 
 .example-header-image {
-background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-background-size: cover;
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
 }
 #fila1 {
 display: inline-flex;
@@ -68,10 +68,10 @@ margin-top: 1.5em;
 
 .tarjeta{
   border: 2px solid black;
-  border-radius: 25px;
-  height: 250px;
-  width: 250px;
-  background-color: deepskyblue;
+  border-radius: 15px;
+  height: 175px;
+  width: 225px;
+  /* background-color: deepskyblue; */
 }
 
 #divAbajo{
