@@ -16,6 +16,7 @@ import { CategoriasComponent } from './categorias/categorias.component';
 import { ProvinciasComponent } from './provincias/provincias.component';
 import { LocalesComponent } from './locales/locales.component';
 import { ProductosComponent } from './productos/productos.component';
+import {MatListModule} from '@angular/material/list';
 
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 
@@ -41,6 +42,7 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
     AngularFireAuthModule,
     HttpClientModule,
     MatGridListModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
