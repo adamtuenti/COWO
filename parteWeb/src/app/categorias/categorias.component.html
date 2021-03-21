@@ -4,20 +4,23 @@
 </div>
 
 <body>
+    <div>
+
+    </div>
     
-    <mat-grid-list cols="3"  rowHeight="175px" style="margin-bottom: 1em;margin-top: 50px;">
-        <mat-grid-tile *ngFor="let categoria of categorias">
-            <mat-card on-click = 'goLocales(categoria.nombre)'  style="margin-right: 1em;" class="example-card tarjeta">
+    <div class="row" style='margin:10%'>
+        <div *ngFor="let categoria of categorias">
+            <div  #tarjetaProducto class="col-lg-2 col-xl-2 example-card tarjeta" on-click = 'goLocales(categoria.nombre)' >
                 <div class="content" align='center'>
                     <p style="font-size: 25px;font-weight: bold;">{{categoria.nombre}}</p>
                     <img src='{{categoria.imagen}}' width="175" height="100">
 
                 </div>                  
                 
-            </mat-card>
-        </mat-grid-tile>
+            </div>
+        </div>
     
-    </mat-grid-list>
+    </div>
 
     <!-- <div >
         <div class="contenedor">

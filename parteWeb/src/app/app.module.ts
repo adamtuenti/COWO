@@ -20,6 +20,7 @@ import {MatListModule} from '@angular/material/list';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { SeleccionarRegistroComponent } from './folder/seleccionar-registro/seleccionar-registro.component';
 
 
 
@@ -32,7 +33,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     CategoriasComponent,
     ProvinciasComponent,
     LocalesComponent,
-    ProductosComponent
+    ProductosComponent,
+    SeleccionarRegistroComponent
   ],
   imports: [
     IvyCarouselModule,

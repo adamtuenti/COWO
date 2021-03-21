@@ -10,7 +10,9 @@ import { ProductosService } from 'src/services/productos.service';
 export class ProductosComponent implements OnInit {
 
   public productos = [];
-  public localSeleccionado: string; 
+  public localSeleccionado: string;
+  public arrayHoover = [];
+  // @ViewChildren("tarjetaProducto") private skillImgs: QueryList<ElementRef>;
 
   constructor(private router: Router,private activatedroute:ActivatedRoute,private productosServices: ProductosService) { 
     
@@ -37,6 +39,7 @@ export class ProductosComponent implements OnInit {
               region: categoria.payload.doc.data().Region,
               imagen: categoria.payload.doc.data().Imagen,
               precio: categoria.payload.doc.data().Precio,
+              onHover: false,
               
 
           });
@@ -45,6 +48,23 @@ export class ProductosComponent implements OnInit {
   }) 
 
   }
+
+  onHoover(object: any){
+    object.onHover = true;
+    console.log('pasando')
+
+  }
+
+  outHoover(object: any){
+    object.onHover = false;
+    console.log('saliendo')
+  }
+
+  // ngAfterViewInit(): void {​​
+  //           this.skillImgs.forEach((skill: ElementRef) => {​​
+  //                this.renderer.setElementStyle(skill.nativeElement,"background","yellow");    
+  //           }​​);
+  // }​​
 
   
 

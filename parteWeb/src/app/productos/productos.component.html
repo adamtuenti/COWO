@@ -5,20 +5,21 @@
 
 <body>
     
-    <mat-grid-list cols="3"  rowHeight="250px" style="margin-bottom: 1em;">
-        <mat-grid-tile *ngFor="let producto of productos">
-            <mat-card  style="margin-right: 2em;" class="example-card tarjeta">
-                <div class="content" align='center'>
+    <div class="row" style='margin:10%'>
+        <div *ngFor="let producto of productos" >
+            <div  style="margin-right: 2em;" #tarjetaProducto class="col-lg-2 col-xl-2 example-card tarjeta" (mouseover)="onHoover(producto)" (mouseout)="outHoover(producto)">
+                <div class="content" align='center' >
                     <p style="font-size: 25px;font-weight: bold;">{{producto.nombre}}</p>
-                    <img src='{{producto.imagen}}' width="300" height="150">
+                    <img src='{{producto.imagen}}' style="height: 150px;width: 150px;" class="hover-shadow">
                     <p style="font-size: 25px;font-weight: bold;">$ {{producto.precio}}</p>
+                    <p *ngIf='producto.onHover'>prueba</p>
 
                 </div>                  
                 
-            </mat-card>
-        </mat-grid-tile>
+            </div>
+        </div>
     
-    </mat-grid-list>
+    </div>
 
 <!-- 
 
