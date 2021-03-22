@@ -23,6 +23,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { SeleccionarRegistroComponent } from './folder/seleccionar-registro/seleccionar-registro.component';
 import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
 import { NuevaCuentaComponent } from './nueva-cuenta/nueva-cuenta.component';
+import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
 
 
 
@@ -38,7 +39,8 @@ import { NuevaCuentaComponent } from './nueva-cuenta/nueva-cuenta.component';
     ProductosComponent,
     SeleccionarRegistroComponent,
     CrearCuentaComponent,
-    NuevaCuentaComponent
+    NuevaCuentaComponent,
+    DetalleProductoComponent
   ],
   imports: [
     IvyCarouselModule,

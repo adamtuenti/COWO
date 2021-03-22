@@ -7,6 +7,7 @@ import { LocalesComponent } from './locales/locales.component';
 import { ProductosComponent } from './productos/productos.component';
 import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
 import { NuevaCuentaComponent } from './nueva-cuenta/nueva-cuenta.component';
+import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'productos', component: ProductosComponent},
   {path: 'crear-cuenta', component: CrearCuentaComponent},
   {path: 'nueva-cuenta', component: NuevaCuentaComponent},
+  {path: 'detalle-producto', component: DetalleProductoComponent },
 ];
 
 @NgModule({
