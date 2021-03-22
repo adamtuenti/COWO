@@ -21,6 +21,8 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { SeleccionarRegistroComponent } from './folder/seleccionar-registro/seleccionar-registro.component';
+import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
+import { NuevaCuentaComponent } from './nueva-cuenta/nueva-cuenta.component';
 
 
 
@@ -34,7 +36,9 @@ import { SeleccionarRegistroComponent } from './folder/seleccionar-registro/sele
     ProvinciasComponent,
     LocalesComponent,
     ProductosComponent,
-    SeleccionarRegistroComponent
+    SeleccionarRegistroComponent,
+    CrearCuentaComponent,
+    NuevaCuentaComponent
   ],
   imports: [
     IvyCarouselModule,
