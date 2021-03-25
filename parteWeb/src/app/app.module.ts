@@ -24,6 +24,7 @@ import { SeleccionarRegistroComponent } from './folder/seleccionar-registro/sele
 import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
 import { NuevaCuentaComponent } from './nueva-cuenta/nueva-cuenta.component';
 import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
+import { SearchComponent } from './search/search.component';
 
 
 
@@ -40,7 +41,8 @@ import { DetalleProductoComponent } from './detalle-producto/detalle-producto.co
     SeleccionarRegistroComponent,
     CrearCuentaComponent,
     NuevaCuentaComponent,
-    DetalleProductoComponent
+    DetalleProductoComponent,
+    SearchComponent
   ],
   imports: [
     IvyCarouselModule,
