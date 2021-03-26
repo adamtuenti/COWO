@@ -16,7 +16,13 @@
     justify-content: center;
 }
 
-.zoom {
+#carrusel-publicidad:hover {
     transform: scale(1.05); 
+}
+
+.shadow{
+    -webkit-filter: drop-shadow( 4px 4px 3px rgba(0, 0, 0, .7));
+    filter: drop-shadow( 4px 4px 3px rgba(0, 0, 0, .7));
+    transform: scale(1.012); 
 }
 

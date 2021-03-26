@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
   goAmazonia(): void{
     this.router.navigate(['/', 'categorias',{region:"Amazonia"}]);
   }
-
+/*
   carruselOver(): void{
     console.log("hola");
     //this.renderer.removeClass(this.carruselImagen.nativeElement,"rgba-black-light");
@@ -59,43 +59,49 @@ export class HomeComponent implements OnInit {
     //this.renderer.addClass(this.carruselImagen.nativeElement,"rgba-black-light");
     this.renderer.removeClass(this.carruselImagen.nativeElement,"zoom");
 
-  }
+  }*/
 
 
   costaOver(): void{
     this.renderer.setAttribute(this.costa.nativeElement,"stroke","#f3e816");
     this.renderer.setAttribute(this.costa.nativeElement,"fill","#f3e816");
     this.renderer.setAttribute(this.costaTexto.nativeElement,"fill","#fff");
+    this.renderer.addClass(this.costa.nativeElement,"shadow");
     
   }
   costaOut(): void{
     this.renderer.setAttribute(this.costa.nativeElement,"stroke","#fff");
     this.renderer.setAttribute(this.costa.nativeElement,"fill","#faf59e");
     this.renderer.setAttribute(this.costaTexto.nativeElement,"fill","#faf59e");
+    this.renderer.removeClass(this.costa.nativeElement,"shadow");
     
   }
   sierraOver(): void{
-    this.renderer.setAttribute(this.sierra.nativeElement,"stroke","#60fe0b");
-    this.renderer.setAttribute(this.sierra.nativeElement,"fill","#60fe0b");
+    this.renderer.setAttribute(this.sierra.nativeElement,"stroke","#c4a045");
+    this.renderer.setAttribute(this.sierra.nativeElement,"fill","#c4a045");
     this.renderer.setAttribute(this.sierraTexto.nativeElement,"fill","#fff");
+    this.renderer.addClass(this.sierra.nativeElement,"shadow");
     
   }
   sierraOut(): void{
     this.renderer.setAttribute(this.sierra.nativeElement,"stroke","#fff");
-    this.renderer.setAttribute(this.sierra.nativeElement,"fill","#bdfe9a");
-    this.renderer.setAttribute(this.sierraTexto.nativeElement,"fill","#bdfe9a");
+    this.renderer.setAttribute(this.sierra.nativeElement,"fill","#e7d7b1");
+    this.renderer.setAttribute(this.sierraTexto.nativeElement,"fill","#e7d7b1");
+    this.renderer.removeClass(this.sierra.nativeElement,"shadow");
     
   }
   amazoniaOver(): void{
-    this.renderer.setAttribute(this.amazonia.nativeElement,"stroke","#c4a045");
-    this.renderer.setAttribute(this.amazonia.nativeElement,"fill","#c4a045");
+    this.renderer.setAttribute(this.amazonia.nativeElement,"stroke","#60fe0b");
+    this.renderer.setAttribute(this.amazonia.nativeElement,"fill","#60fe0b");
     this.renderer.setAttribute(this.amazoniaTexto.nativeElement,"fill","#fff");
+    this.renderer.addClass(this.amazonia.nativeElement,"shadow");
     
   }
   amazoniaOut(): void{
     this.renderer.setAttribute(this.amazonia.nativeElement,"stroke","#fff");
-    this.renderer.setAttribute(this.amazonia.nativeElement,"fill","#e7d7b1");
-    this.renderer.setAttribute(this.amazoniaTexto.nativeElement,"fill","#e7d7b1");
+    this.renderer.setAttribute(this.amazonia.nativeElement,"fill","#bdfe9a");
+    this.renderer.setAttribute(this.amazoniaTexto.nativeElement,"fill","#bdfe9a");
+    this.renderer.removeClass(this.amazonia.nativeElement,"shadow");
     
   }
 

@@ -73,6 +73,9 @@ margin-top: 1.5em;
   width: 250px;
   /* background-color: deepskyblue; */
 }
+.tarjeta:hover{
+  transform: scale(1.05); 
+}
 
 #divAbajo{
   border: 1px solid black;

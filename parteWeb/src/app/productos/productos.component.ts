@@ -49,16 +49,7 @@ export class ProductosComponent implements OnInit {
 
   }
 
-  onHoover(object: any){
-    object.onHover = true;
-    console.log('pasando')
-
-  }
-
-  outHoover(object: any){
-    object.onHover = false;
-    console.log('saliendo')
-  }
+  
 
   // ngAfterViewInit(): void {​​
   //           this.skillImgs.forEach((skill: ElementRef) => {​​
