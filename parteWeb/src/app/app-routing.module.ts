@@ -9,6 +9,7 @@ import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
 import { NuevaCuentaComponent } from './nueva-cuenta/nueva-cuenta.component';
 import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
 import { SearchComponent } from './search/search.component';
+import { NuevoProductoComponent } from './nuevo-producto/nuevo-producto.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'crear-cuenta', component: CrearCuentaComponent},
   {path: 'nueva-cuenta', component: NuevaCuentaComponent},
   {path: 'detalle-producto', component: DetalleProductoComponent },
+  {path: 'nuevo-producto', component: NuevoProductoComponent },
   {path: 'search', component: SearchComponent}
 ];
 

@@ -1,0 +1,66 @@
+<div class="card" style="padding-left: 35%;padding-top: 5%;">
+    <div class="card-body">
+      <h4 class="card-title">Añadir producto</h4>
+      <div class="row">
+        <div class="col-md-6">
+          <form novalidate>
+            <div class="form-group">
+              <label>Nombre</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group ">
+              <label>Precio</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group ">
+              <label>Descripción</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group ">
+              <label>Region</label>
+              <select class="form-control">
+                <option *ngFor="let r of regiones" [value]="p">{{r}}</option>
+              </select>
+            </div>
+            <div class="form-group ">
+              <label>Categoría</label>
+              <select class="form-control">
+                <option *ngFor="let c of categorias" [value]="p">{{c}}</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Local</label>
+              <select class="form-control">
+                <option *ngFor="let l of locales" [value]="p">{{l}}</option>
+              </select>
+            </div>
+            
+            <div class = "form-group">
+                <input type="file" accept="image/*" (change)="showPreview($event, 0)" />
+
+                <!-- Image Preview -->
+                <div class="imagePreview" *ngIf="imageURL[0] && imageURL[0] !== ''">
+                    <img [src]="imageURL[0]" [alt]="uploadForm.value.name">
+                </div>
+            </div>
+
+            <div class = "form-group">
+                <input type="file" accept="image/*" (change)="showPreview($event, 1)" />
+
+                <!-- Image Preview -->
+                <div class="imagePreview" *ngIf="imageURL[1] && imageURL[1] !== ''">
+                    <img [src]="imageURL[1]" [alt]="uploadForm.value.name">
+                </div>
+            </div>
+
+            <!--
+                forms dinamicos : https://jasonwatmore.com/post/2020/09/18/angular-10-dynamic-reactive-forms-example
+            -->
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button class="btn btn-default">Reset</button>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
