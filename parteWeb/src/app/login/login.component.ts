@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService} from 'src/services/login.service'
 import {MensajeService} from 'src/services/mensaje.service'
+import { FormControl, FormGroupDirective, FormGroup, NgForm, Validators } from '@angular/forms';
 
 
 @Component({
@@ -18,8 +19,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
+
   async loginUser(form):Promise<void>{
-    this.loginService.loginUser(form.value.email,form.value.password).
+    console.log(form.value)
+    this.loginService.login(form.value.email,form.value.password).
     then(
       (res)=>{
         localStorage.setItem('userId', res.user.uid);
@@ -45,6 +49,8 @@ export class LoginComponent implements OnInit {
       } 
     )
   }
+
+  
 
 
 

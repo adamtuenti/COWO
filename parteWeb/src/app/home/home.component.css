@@ -12,12 +12,13 @@
 
     align-items: center;
     display: flex;
-    height: 80vh;
+    height: 125px;
+    margin-top: 250px;
     justify-content: center;
 }
 
 #carrusel-publicidad:hover {
-    transform: scale(1.05); 
+    /* transform: scale(1.05);  */
 }
 
 .shadow{
