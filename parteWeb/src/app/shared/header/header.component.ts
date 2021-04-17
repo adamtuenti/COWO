@@ -1,6 +1,9 @@
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../../services/auth.service';
+import firebase from "firebase/app"
+
 
 @Component({
   selector: 'app-header',
@@ -9,13 +12,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  usuario;
+  public usuario;
+  public user$: Observable<firebase.User> = this.AuthService.afAuth.user;
   rol;
-  constructor() { }
+  constructor(private AuthService: AuthService,
+    private router: Router,) { }
 
-  ngOnInit(): void {
-    this.rol = localStorage.getItem('rol');
+  async ngOnInit(){
+    const user = await this.AuthService.getCurrentUser();
+     this.user$.subscribe(res=>{
+       this.usuario = res;
+
+     }
+     )
+    // this.usuario = localStorage.getItem('idUser')
+    this.rol = localStorage.getItem('usuarioRol');
+    console.log(localStorage.getItem('usuarioRol'))
   }
+
+  async logOut() {
+     try {
+      this.AuthService.logout();
+      localStorage.clear();
+      this.router.navigate(['/login']);
+      this.usuario=null;
+     } catch (error) {
+       console.log(error);
+     }
+   }
 
 
   esComprador(){

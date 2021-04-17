@@ -37,6 +37,7 @@ export class AuthService {
 
 
 
+
   /*  async register(email: string, password: string, payloadObject: any) {
       this.afAuth.createUserWithEmailAndPassword(email, password).then(
         (user) => {

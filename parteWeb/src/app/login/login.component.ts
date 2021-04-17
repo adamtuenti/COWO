@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService} from 'src/services/login.service'
+import {UsuarioService} from 'src/services/usuario.service'
 import {MensajeService} from 'src/services/mensaje.service'
 import { FormControl, FormGroupDirective, FormGroup, NgForm, Validators } from '@angular/forms';
 
@@ -11,7 +12,10 @@ import { FormControl, FormGroupDirective, FormGroup, NgForm, Validators } from '
 })
 export class LoginComponent implements OnInit {
 
+  public datosUsuario;
+
   constructor(private loginService: LoginService,
+              private usuarioService: UsuarioService,
               private mensajeService:MensajeService
              ) { }
 
@@ -27,7 +31,7 @@ export class LoginComponent implements OnInit {
     then(
       (res)=>{
         localStorage.setItem('idUser', res.user.uid);
-        localStorage.setItem('rol', res.user.Rol);
+        this.getRol(res.user.uid)
         console.log( res.user.uid)
         //console.log( res.user.Rol)
       },
@@ -38,6 +42,26 @@ export class LoginComponent implements OnInit {
         
       }
     )
+  }
+
+  getRol(id){
+
+    this.usuarioService.getUsuario(id).subscribe((userSnapshot) => {
+      this.datosUsuario = userSnapshot.payload.data();
+      
+      console.log("datos usuario: ", userSnapshot.payload.data());
+      localStorage.setItem('usuarioRol',this.datosUsuario.Rol);
+
+    }, (error) => {
+      console.log(error)
+    });
+
+
+
+    // const user = this.usuarioService.getUsuario(id);
+    // console.log('user: ',user.)
+    
+
   }
 
   async goToReset(email){
