@@ -10,6 +10,8 @@ import { NuevaCuentaComponent } from './nueva-cuenta/nueva-cuenta.component';
 import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
 import { SearchComponent } from './search/search.component';
 import { NuevoProductoComponent } from './nuevo-producto/nuevo-producto.component';
+import { ContactoComponent} from './contacto/contacto.component';
+import { NosotrosComponent} from './nosotros/nosotros.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -22,7 +24,9 @@ const routes: Routes = [
   {path: 'nueva-cuenta', component: NuevaCuentaComponent},
   {path: 'detalle-producto', component: DetalleProductoComponent },
   {path: 'nuevo-producto', component: NuevoProductoComponent },
-  {path: 'search', component: SearchComponent}
+  {path: 'search', component: SearchComponent},
+  {path: 'contacto', component: ContactoComponent},
+  {path: 'nosotros', component: NosotrosComponent}
 ];
 
 @NgModule({
