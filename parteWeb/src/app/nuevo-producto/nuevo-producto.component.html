@@ -3,7 +3,7 @@
       <h4 class="card-title">Añadir producto</h4>
       <div class="row">
         <div class="col-md-6">
-          <form novalidate>
+          <form [formGroup]="myForm" novalidate (ngSubmit)="uploadProducto(myForm.value)">
             <div class="form-group">
               <label>Nombre</label>
               <input type="text" class="form-control">
@@ -59,7 +59,7 @@
                 forms dinamicos : https://jasonwatmore.com/post/2020/09/18/angular-10-dynamic-reactive-forms-example
             -->
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" >Submit</button>
             <button class="btn btn-default">Reset</button>
           </form>
         </div>

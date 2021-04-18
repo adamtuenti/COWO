@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CategoriasProductosService } from 'src/services/categorias-productos.service';
 import { LocalesService } from 'src/services/locales.service';
+import { ProductosService } from 'src/services/productos.service';
 
 
 class ImageSnippet {
@@ -36,7 +37,8 @@ export class NuevoProductoComponent implements OnInit {
 
   selectedFile: ImageSnippet;
 
-  constructor(private categoriasServices: CategoriasProductosService, private localesServices: LocalesService) { }
+  constructor(private categoriasServices: CategoriasProductosService, private localesServices: LocalesService,
+              private productosServices: ProductosService) { }
   ngOnInit() {
     this.nombre = new FormControl();
     this.precio = new FormControl();
@@ -104,6 +106,15 @@ export class NuevoProductoComponent implements OnInit {
       });
     })
 
+  }
+
+  uploadProducto(value){
+    console.log(value)
+    /*let producto={
+      
+    }*/
+
+    //this.productosServices.addProducto()
   }
 
 
