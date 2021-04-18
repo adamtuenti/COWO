@@ -18,20 +18,22 @@
             </div>
             <div class="form-group ">
               <label>Region</label>
-              <select class="form-control">
-                <option *ngFor="let r of regiones" [value]="p">{{r}}</option>
+              <select class="form-control" (change) = "seleccionRegion($event.target.value)">
+
+                <option hidden disabled selected [value]=""> Seleccione una region </option>
+                <option *ngFor="let r of regiones" [value]="r" >{{r}}</option>
               </select>
             </div>
             <div class="form-group ">
               <label>Categoría</label>
-              <select class="form-control">
-                <option *ngFor="let c of categorias" [value]="p">{{c}}</option>
+              <select class="form-control" (change) = "seleccionCategoria($event.target.value)">
+                <option *ngFor="let c of categorias" [value]="c">{{c}}</option>
               </select>
             </div>
             <div class="form-group">
               <label>Local</label>
               <select class="form-control">
-                <option *ngFor="let l of locales" [value]="p">{{l}}</option>
+                <option *ngFor="let l of locales" [value]="l">{{l}}</option>
               </select>
             </div>
             

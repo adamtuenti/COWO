@@ -10,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   usuario;
+  rol;
   constructor() { }
 
   ngOnInit(): void {
+    this.rol = localStorage.getItem('rol');
+  }
+
+
+  esComprador(){
+    return this.rol=="Comprador";
+  }
+
+  esVendedor(){
+    return this.rol=="Vendedor";
   }
 
 }

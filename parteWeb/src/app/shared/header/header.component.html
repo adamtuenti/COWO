@@ -18,7 +18,14 @@
           <a class="nav-link waves-light element"  routerLink="/perfil">Perfil
           </a>
         </li> -->
-  
+        <li class="nav-item" *ngIf = "esComprador()">
+          <a class="nav-link element" routerLink="/nosotros">Opciones comprador
+          </a>
+        </li>
+        <li class="nav-item" *ngIf = "esVendedor()">
+          <a class="nav-link element" routerLink="/nosotros">Opciones vededor
+          </a>
+        </li>
      
   
        

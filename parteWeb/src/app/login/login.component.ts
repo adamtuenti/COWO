@@ -26,8 +26,10 @@ export class LoginComponent implements OnInit {
     this.loginService.login(form.value.email,form.value.password).
     then(
       (res)=>{
-        localStorage.setItem('userId', res.user.uid);
+        localStorage.setItem('idUser', res.user.uid);
+        localStorage.setItem('rol', res.user.Rol);
         console.log( res.user.uid)
+        //console.log( res.user.Rol)
       },
       async error => {
         var mensaje=error.code.split('/')[1]

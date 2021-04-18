@@ -11,4 +11,8 @@ export class LocalesService {
   getLocales(categoria:string, region:string){
     return this.firestore.collection("Locales", ref => ref.where("Categoria",'==',categoria).where("Region",'==',region)).snapshotChanges();
   }
+
+  getLocalesUsuario(categoria:string, region:string, usuario:string){
+    return this.firestore.collection("Locales", ref => ref.where("Categoria",'==',categoria).where("Region",'==',region).where("Propietario", '==',usuario)).snapshotChanges();
+  }
 }
