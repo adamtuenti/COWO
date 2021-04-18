@@ -1,0 +1,11 @@
+.row{
+    text-align: justify;
+}
+
+section {
+    background-image: url('https://blog.naturlider.com/wp-content/uploads/2020/03/AdobeStock_309195144-post-dia-mundial-naturaleza.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: whitesmoke;
+  }

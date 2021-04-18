@@ -26,6 +26,8 @@ import { NuevaCuentaComponent } from './nueva-cuenta/nueva-cuenta.component';
 import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
 import { SearchComponent } from './search/search.component';
 import { NuevoProductoComponent } from './nuevo-producto/nuevo-producto.component';
+import { ContactoComponent } from './contacto/contacto.component';
+import { NosotrosComponent } from './nosotros/nosotros.component';
 
 
 
@@ -44,7 +46,9 @@ import { NuevoProductoComponent } from './nuevo-producto/nuevo-producto.componen
     NuevaCuentaComponent,
     DetalleProductoComponent,
     SearchComponent,
-    NuevoProductoComponent
+    NuevoProductoComponent,
+    ContactoComponent,
+    NosotrosComponent
   ],
   imports: [
     IvyCarouselModule,
