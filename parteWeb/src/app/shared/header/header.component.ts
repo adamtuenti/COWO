@@ -11,6 +11,7 @@ import firebase from "firebase/app"
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  public show = false;
 
   public usuario;
   public user$: Observable<firebase.User> = this.AuthService.afAuth.user;
@@ -22,12 +23,13 @@ export class HeaderComponent implements OnInit {
     const user = await this.AuthService.getCurrentUser();
      this.user$.subscribe(res=>{
        this.usuario = res;
+       this.rol = localStorage.getItem('usuarioRol');
+        console.log(localStorage.getItem('usuarioRol'))
 
      }
      )
     // this.usuario = localStorage.getItem('idUser')
-    this.rol = localStorage.getItem('usuarioRol');
-    console.log(localStorage.getItem('usuarioRol'))
+    
   }
 
   async logOut() {
