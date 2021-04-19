@@ -1,0 +1,77 @@
+<div class="page-wrapper bg-gra-03 p-t-45 p-b-50" style="margin-top: 60px;">
+    <div class="wrapper wrapper--w790">
+        <div class="card card-5">
+            <div class="card-heading">
+                <h2 class="title">Event Registration Form</h2>
+            </div>
+            <div class="card-body">
+                <form #form="ngForm" (ngSubmit)="crearCuenta(form)">
+                    <div class="form-row m-b-55">
+                        <div class="name">Nombres</div>
+                        <div class="value">
+                            <div class="row row-space">
+                                <div class="col-2">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="nombre" ngModel>
+                                        <label class="label--desc">Nombre</label>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="apellido" ngModel>
+                                        <label class="label--desc">Apellido</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="form-row">
+                        <div class="name">Company</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-5" type="text" name="company">
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="form-row">
+                        <div class="name">Correo</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-5" type="email" name="email" ngModel>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row m-b-55">
+                        <div class="name">Telefono</div>
+                        
+                                <div class="col-9">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="telefono" ngModel>
+                                        <label class="label--desc">Telefono</label>
+                                    </div>
+                       
+                                </div>
+                    </div>
+
+                    <div class="form-row m-b-55">
+                        <div class="name">Cedula</div>
+                        
+                                <div class="col-9">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="cedula" ngModel>
+                                        <label class="label--desc">Cedula</label>
+                                    </div>
+                       
+                                </div>
+                    </div>
+
+
+              
+                    <div>
+                        <button class="btn btn--radius-2 btn--red" type="submit">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

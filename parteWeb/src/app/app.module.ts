@@ -28,6 +28,7 @@ import { SearchComponent } from './search/search.component';
 import { NuevoProductoComponent } from './nuevo-producto/nuevo-producto.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
+import { NuevaCuentaVendedorComponent } from './nueva-cuenta-vendedor/nueva-cuenta-vendedor.component';
 
 
 
@@ -48,7 +49,8 @@ import { NosotrosComponent } from './nosotros/nosotros.component';
     SearchComponent,
     NuevoProductoComponent,
     ContactoComponent,
-    NosotrosComponent
+    NosotrosComponent,
+    NuevaCuentaVendedorComponent
   ],
   imports: [
     IvyCarouselModule,

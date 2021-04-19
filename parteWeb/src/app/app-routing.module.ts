@@ -7,6 +7,7 @@ import { LocalesComponent } from './locales/locales.component';
 import { ProductosComponent } from './productos/productos.component';
 import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
 import { NuevaCuentaComponent } from './nueva-cuenta/nueva-cuenta.component';
+import { NuevaCuentaVendedorComponent } from './nueva-cuenta-vendedor/nueva-cuenta-vendedor.component';
 import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
 import { SearchComponent } from './search/search.component';
 import { NuevoProductoComponent } from './nuevo-producto/nuevo-producto.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'productos', component: ProductosComponent},
   {path: 'crear-cuenta', component: CrearCuentaComponent},
   {path: 'nueva-cuenta', component: NuevaCuentaComponent},
+  {path: 'nueva-cuenta-vendedor', component: NuevaCuentaVendedorComponent},
   {path: 'detalle-producto', component: DetalleProductoComponent },
   {path: 'nuevo-producto', component: NuevoProductoComponent },
   {path: 'search', component: SearchComponent},

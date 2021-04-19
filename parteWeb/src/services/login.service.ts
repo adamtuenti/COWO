@@ -68,6 +68,7 @@ export class LoginService {
             Apellido: apellido,
             Correo: email,
             Telefono: telefono,
+            Rol: 'Comprador'
           });
              this.router.navigate(["/home"])
       return result;
@@ -95,6 +96,31 @@ export class LoginService {
 
       // });  
     // })
+  }
+
+  async registerVendedor(nombre:string, apellido: string, email:string, password:string, telefono: string, cedula: string):Promise<any>{
+
+
+   try {
+       const result = await this.afAuth.createUserWithEmailAndPassword(email, password).then( res=>{
+         this.firestore.collection('Usuarios').doc(res.user.uid).set({
+            Nombre: nombre,
+            Apellido: apellido,
+            Correo: email,
+            Telefono: telefono,
+            Rol: 'Vendedor',
+            Cedula: cedula,
+          });
+             this.router.navigate(["/home"])
+      return result;
+       })
+   
+    }
+    catch (error) {
+      console.log(error);
+      Swal.fire("Error", error.message, "error")
+
+    }
   }
 
 }
