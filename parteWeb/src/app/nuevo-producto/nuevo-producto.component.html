@@ -3,22 +3,22 @@
       <h4 class="card-title">Añadir producto</h4>
       <div class="row">
         <div class="col-md-6">
-          <form [formGroup]="myForm" novalidate (ngSubmit)="uploadProducto(myForm.value)">
+          <form #form="ngForm" novalidate (ngSubmit)="uploadProducto(form)">
             <div class="form-group">
               <label>Nombre</label>
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" name="nombre" ngModel>
             </div>
             <div class="form-group ">
               <label>Precio</label>
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" name="precio" ngModel>
             </div>
             <div class="form-group ">
               <label>Descripción</label>
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" name="descripcion" ngModel>
             </div>
             <div class="form-group ">
               <label>Region</label>
-              <select class="form-control" (change) = "seleccionRegion($event.target.value)">
+              <select class="form-control" (change) = "seleccionRegion($event.target.value)" name="region" ngModel>
 
                 <option hidden disabled selected [value]=""> Seleccione una region </option>
                 <option *ngFor="let r of regiones" [value]="r" >{{r}}</option>
@@ -26,32 +26,32 @@
             </div>
             <div class="form-group ">
               <label>Categoría</label>
-              <select class="form-control" (change) = "seleccionCategoria($event.target.value)">
+              <select class="form-control" (change) = "seleccionCategoria($event.target.value)" name="categoria" ngModel>
                 <option *ngFor="let c of categorias" [value]="c">{{c}}</option>
               </select>
             </div>
             <div class="form-group">
               <label>Local</label>
-              <select class="form-control">
+              <select class="form-control" name="local" ngModel>
                 <option *ngFor="let l of locales" [value]="l">{{l}}</option>
               </select>
             </div>
             
             <div class = "form-group">
-                <input type="file" accept="image/*" (change)="showPreview($event, 0)" />
+                <input type="file" accept="image/*" (change)="showPreview($event, 0)" name="imagen1" ngModel/>
 
                 <!-- Image Preview -->
                 <div class="imagePreview" *ngIf="imageURL[0] && imageURL[0] !== ''">
-                    <img [src]="imageURL[0]" [alt]="uploadForm.value.name">
+                    <img [src]="imageURL[0]" >
                 </div>
             </div>
 
             <div class = "form-group">
-                <input type="file" accept="image/*" (change)="showPreview($event, 1)" />
+                <input type="file" accept="image/*" (change)="showPreview($event, 1)" name="imagen2" ngModel/>
 
                 <!-- Image Preview -->
                 <div class="imagePreview" *ngIf="imageURL[1] && imageURL[1] !== ''">
-                    <img [src]="imageURL[1]" [alt]="uploadForm.value.name">
+                    <img [src]="imageURL[1]" >
                 </div>
             </div>
 

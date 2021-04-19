@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireStorage } from '@angular/fire/storage';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { finalize } from 'rxjs/operators';
 import { CategoriasProductosService } from 'src/services/categorias-productos.service';
 import { LocalesService } from 'src/services/locales.service';
 import { ProductosService } from 'src/services/productos.service';
@@ -22,7 +24,7 @@ export class NuevoProductoComponent implements OnInit {
   categorias = ['Seleccione una region'];
   locales = ['Seleccione una region'];
   usuario = "";
-  myForm: FormGroup;
+  /*myForm: FormGroup;
   nombre: FormControl;
   precio: FormControl;
   descripcion: FormControl;
@@ -30,49 +32,48 @@ export class NuevoProductoComponent implements OnInit {
   categoria: FormControl;
   local: FormControl;
   imagen: FormControl;
-  imagen2: FormControl;
+  imagen2: FormControl;*/
+
+  myForm = new FormGroup({
+    'nombre': new FormControl(),
+    'precio' : new FormControl(),
+    'region' : new FormControl(),
+    'descripcion': new FormControl(),
+    'categoria': new FormControl(),
+    'local': new FormControl(),
+    'imagen': new FormControl(),
+    'imagen2': new FormControl()
+  });
 
   imageURL: string[] = ['',''] ;
+  files: any[] = [null,null];
 
 
   selectedFile: ImageSnippet;
 
   constructor(private categoriasServices: CategoriasProductosService, private localesServices: LocalesService,
-              private productosServices: ProductosService) { }
+              private productosServices: ProductosService,
+              private store: AngularFireStorage) { }
   ngOnInit() {
-    this.nombre = new FormControl();
-    this.precio = new FormControl();
-    this.descripcion = new FormControl();
-    this.region = new FormControl();
-    this.categoria = new FormControl();
-    this.local = new FormControl();
-    this.imagen = new FormControl();
-    this.imagen2 = new FormControl();
-    this.myForm = new FormGroup({
-      'nombre': this.nombre,
-      'precio' : this.precio,
-      'region' : this.region,
-      'descripcion': this.descripcion,
-      'categoria': this.categoria,
-      'local': this.local,
-      'imagen': this.imagen,
-      'imagen2': this.imagen2
-    });
+    
   }
 
   showPreview(event,i) {
     const file = (event.target as HTMLInputElement).files[0];
+    this.files[i] = file;
     this.myForm.patchValue({
       avatar: file
     });
     this.myForm.get('imagen').updateValueAndValidity()
 
     // File Preview
+    /*
     const reader = new FileReader();
     reader.onload = () => {
       this.imageURL[i] = reader.result as string;
     }
-    reader.readAsDataURL(file)
+    reader.readAsDataURL(file)*/
+    this.uploadImage(file,i);
   }
 
   seleccionRegion(r:string){
@@ -108,14 +109,46 @@ export class NuevoProductoComponent implements OnInit {
 
   }
 
-  uploadProducto(value){
-    console.log(value)
+  uploadProducto(form){
+    console.log(form.value)
+    let producto = form.value;
+    producto.propietario = this.usrId;
+
+    this.productosServices.addProducto(producto,this.imageURL[0],this.imageURL[1])
     /*let producto={
       
     }*/
 
     //this.productosServices.addProducto()
   }
+
+  uploadImage(file,i) {
+    let downloadURL;
+    
+    // tslint:disable-next-line:prefer-const
+    let path = `Productos/${file.name}`;
+    if (file.type.split('/')[0] !== 'image') {
+      alert('Error, el archivo no es una imagen')
+      return null;
+    } else {
+      // tslint:disable-next-line:prefer-const
+      let ref = this.store.ref(path);
+      // tslint:disable-next-line:prefer-const
+      let task = this.store.upload(path, file);
+      //this.uploadPercent = task.percentageChanges();
+      console.log('Imagen cargada');
+      task.snapshotChanges().pipe(
+        finalize(() => {
+          downloadURL = ref.getDownloadURL();
+          downloadURL.subscribe(url => {
+            console.log(url);
+            this.imageURL[i] =  url;
+          });
+        }
+        )
+      ).subscribe();
+    }
+}
 
 
 }
