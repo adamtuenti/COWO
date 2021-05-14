@@ -13,6 +13,10 @@ import { SearchComponent } from './search/search.component';
 import { NuevoProductoComponent } from './nuevo-producto/nuevo-producto.component';
 import { ContactoComponent} from './contacto/contacto.component';
 import { NosotrosComponent} from './nosotros/nosotros.component';
+import {InsumosComponent} from './insumos/insumos.component';
+import {LogisticaComponent} from './logistica/logistica.component';
+import {TurismoComponent} from './turismo/turismo.component';
+import {ThumanoComponent} from './thumano/thumano.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -28,7 +32,11 @@ const routes: Routes = [
   {path: 'nuevo-producto', component: NuevoProductoComponent },
   {path: 'search', component: SearchComponent},
   {path: 'contacto', component: ContactoComponent},
-  {path: 'nosotros', component: NosotrosComponent}
+  {path: 'nosotros', component: NosotrosComponent},
+  {path: 'insumos', component: InsumosComponent},
+  {path: 'logistica', component: LogisticaComponent},
+  {path: 'turismo', component: TurismoComponent},
+  {path: 'thumano', component: ThumanoComponent}
 ];
 
 @NgModule({

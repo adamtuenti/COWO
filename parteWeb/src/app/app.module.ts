@@ -29,6 +29,10 @@ import { NuevoProductoComponent } from './nuevo-producto/nuevo-producto.componen
 import { ContactoComponent } from './contacto/contacto.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import { NuevaCuentaVendedorComponent } from './nueva-cuenta-vendedor/nueva-cuenta-vendedor.component';
+import { InsumosComponent } from './insumos/insumos.component';
+import { LogisticaComponent } from './logistica/logistica.component';
+import { TurismoComponent } from './turismo/turismo.component';
+import { ThumanoComponent } from './thumano/thumano.component';
 
 
 
@@ -50,7 +54,11 @@ import { NuevaCuentaVendedorComponent } from './nueva-cuenta-vendedor/nueva-cuen
     NuevoProductoComponent,
     ContactoComponent,
     NosotrosComponent,
-    NuevaCuentaVendedorComponent
+    NuevaCuentaVendedorComponent,
+    InsumosComponent,
+    LogisticaComponent,
+    TurismoComponent,
+    ThumanoComponent
   ],
   imports: [
     IvyCarouselModule,

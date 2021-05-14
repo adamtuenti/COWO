@@ -1,0 +1,15 @@
+<p>insumos works!</p>
+
+<div class="container">
+    <div class="w-full lg:max-w-full lg:flex" *ngFor="let insumo of insumos">
+
+        <div>
+            <img src="{{insumo.foto}}" alt="Italian Trulli"width="60" height="50">
+        </div>
+        <div class="mb-8">
+            <div class="text-gray-900 font-blod text-xl mb-2">{{insumo.nombre}}</div>
+            <p class="text-gray-700 text-bsae"> {{insumo.direccion}} </p>
+        </div>
+    </div>
+
+</div>
