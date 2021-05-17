@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LogisticaService } from 'src/services/logistica.service';
+import { Estructura } from '../interfaces/estructura.interface';
 
 @Component({
   selector: 'app-logistica',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogisticaComponent implements OnInit {
 
-  constructor() { }
+  public logisticas: Estructura[] = [];
+  constructor( private insumoService: LogisticaService) { }
 
   ngOnInit(): void {
+    this.insumoService.getLogistica().subscribe(
+      (ins: Estructura[]) => {
+        this.logisticas = ins;
+      }
+    );
   }
 
 }

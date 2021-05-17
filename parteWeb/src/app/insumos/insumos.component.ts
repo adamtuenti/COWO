@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InsumosService } from 'src/services/insumos.service';
-import { Insumo } from '../interfaces/insumo.interface';
+import { Estructura } from '../interfaces/estructura.interface';
 
 @Component({
   selector: 'app-insumos',
@@ -9,14 +9,14 @@ import { Insumo } from '../interfaces/insumo.interface';
 })
 export class InsumosComponent implements OnInit {
 
-  public insumos: Insumo[] = [];
+  public insumos: Estructura[] = [];
   constructor( private insumoService: InsumosService) { }
 
 
 
   ngOnInit(): void {
     this.insumoService.getInsumos().subscribe(
-      (ins: Insumo[]) => {
+      (ins: Estructura[]) => {
         this.insumos = ins;
       }
     );

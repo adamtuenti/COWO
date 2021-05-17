@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TurismoService } from 'src/services/turismo.service';
+import { Estructura } from '../interfaces/estructura.interface';
 
 @Component({
   selector: 'app-turismo',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TurismoComponent implements OnInit {
 
-  constructor() { }
+  public turismos: Estructura[] = [];
+  constructor( private TurismoService: TurismoService) { }
+
+
 
   ngOnInit(): void {
+    this.TurismoService.getTurismo().subscribe(
+      (ins: Estructura[]) => {
+        this.turismos = ins;
+      }
+    );
   }
 
 }

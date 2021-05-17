@@ -1,1 +1,28 @@
 <p>logistica works!</p>
+<p>logistica works!</p>
+
+
+<div class="container">
+    <div class="row justify-content-around">
+        <div class="card-deck">
+            <div *ngFor="let logistica of logisticas">
+
+
+
+                <div class="card">
+                    <img class="card-img-top" src="{{logistica.foto}}" alt="Card image cap" width="277" height="180">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-weight: bold;">{{logistica.nombre}}</h5>
+                        <p class="card-text">{{logistica.direccion}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 16 mins ago</small>
+                    </div>
+                </div>
+                <br>
+
+            </div>
+
+        </div>
+    </div>
+</div>

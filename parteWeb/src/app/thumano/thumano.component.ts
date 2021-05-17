@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ThumanoService } from 'src/services/thumano.service';
+import { Estructura } from '../interfaces/estructura.interface';
 
 @Component({
   selector: 'app-thumano',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThumanoComponent implements OnInit {
 
-  constructor() { }
+  public talentos: Estructura[] = [];
+  constructor( private ThumanoService: ThumanoService) { }
+
+
 
   ngOnInit(): void {
+    this.ThumanoService.getThumano().subscribe(
+      (ins: Estructura[]) => {
+        this.talentos = ins;
+      }
+    );
   }
-
 }
