@@ -1,15 +1,47 @@
 <p>insumos works!</p>
+<p>insumos works!</p>
+
 
 <div class="container">
-    <div class="w-full lg:max-w-full lg:flex" *ngFor="let insumo of insumos">
+    <div class="row justify-content-around">
+        <div class="card-deck">
+            <div *ngFor="let insumo of insumos">
 
-        <div>
-            <img src="{{insumo.foto}}" alt="Italian Trulli"width="60" height="50">
-        </div>
-        <div class="mb-8">
-            <div class="text-gray-900 font-blod text-xl mb-2">{{insumo.nombre}}</div>
-            <p class="text-gray-700 text-bsae"> {{insumo.direccion}} </p>
+
+
+                <div class="card">
+                    <img class="card-img-top"  src="{{insumo.foto}}" alt="Card image cap" width="277" height="180" >
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-weight: bold;">{{insumo.nombre}}</h5>
+                        <p class="card-text">{{insumo.direccion}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+
+                <!--
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{insumo.foto}}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{insumo.nombre}}</h5>
+                  <p class="card-text">{{insumo.direccion}}</p>
+                  <a href="#" class="btn btn-primary">Go</a>
+                </div>
+              </div>
+              -->
+                <!--
+            <div class="content" align='center'>
+                <p style="font-size: 25px;font-weight: bold;">{{insumo.nombre}}</p>
+                <img src='{{insumo.foto}}' width="175" height="100">
+                <p>{{insumo.direccion}}</p>
+
+            </div>     -->
+
+
+
+            </div>
+
         </div>
     </div>
-
 </div>

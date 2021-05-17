@@ -1,0 +1,26 @@
+.menu{text-align: rigth;}
+
+
+.example-card {
+  max-width: 300px;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+    width: 100%;
+}
+
+.tarjeta{
+  border: 1px solid  rgb(143, 145, 142);
+  /* border-bottom: 2px solid rgb(143, 145, 142); */
+  border-radius: 5px;
+  height: 175px;
+  width: 225px;
+  /* background-color: deepskyblue; */
+}
+
+.content{
+  align-items: center;
+  justify-content: center;
+}
